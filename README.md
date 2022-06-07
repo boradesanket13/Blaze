@@ -9,9 +9,9 @@ Created this Weather Forecasting website using Openweathermap API
 - Responsive Design
 
 
-## Website
+## Check out the project here
 
-[Website](https://sanket1308-weather-app.netlify.app/)
+[https://sanket1308-weather-app.netlify.app](https://sanket1308-weather-app.netlify.app/)
 
 ![Screenshot](assets/Demo.jpeg)
 
