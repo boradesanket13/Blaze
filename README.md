@@ -11,15 +11,9 @@ Created this Weather Forecasting website using Openweathermap API
 
 ## Website
 
-![Website](https://sanket1308-weather-app.netlify.app/)
+[Website](https://sanket1308-weather-app.netlify.app/)
 
-
-![Demo](assets/Demo.jpeg)
-
-
-## Website
-
-![Website](https://sanket1308-weather-app.netlify.app/)
+![Screenshot](assets/Demo.jpeg)
 
 ## Contributing
 Contributions are always welcome!
@@ -37,8 +31,6 @@ Please adhere to this project's `code of conduct`.
 
 ## Feedback
 If you have any feedback, please reach out to us at boradesanket13@gmail.com
-
-- [@Sanket1308](https://www.github.com/Sanket1308)
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://sanketborade.me)
