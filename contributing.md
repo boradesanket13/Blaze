@@ -1,4 +1,4 @@
-# Contributing to [Weather](https://github.com/Sanket1308/Weather-App)
+# Contributing to [Weather-App](https://github.com/Sanket1308/Weather-App)
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square&logo=git&logoColor=fff)](https://github.com/Sanket1308/Weather-App/pulls)
 [![GitHub Issues](https://img.shields.io/github/issues/Sanket1308/Weather-App?style=flat-square&logo=github&color=f00)](https://github.com/Sanket1308/Weather-App/issues)
