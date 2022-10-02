@@ -95,6 +95,7 @@ h1.temp-F {
   display: inline-block;
   width: 60px;
   height: 30px;
+  margin-bottom: 15px;
 }
 .switch input {
   opacity: 0;
@@ -147,7 +148,7 @@ input:checked + .slider:before {
   transform: translate(-50%,-50%);
   top: 50%;
   left: 140%;
-  font-size: 30px;
+  font-size: 15px;
   font-family: Verdana, sans-serif;
 }
 
