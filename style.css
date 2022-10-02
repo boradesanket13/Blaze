@@ -192,7 +192,6 @@ input:checked + .slider .celsius
 .darkmode{
   filter: invert(1);
 }
-=======
 .light-mode {
   background-color: rgba(255, 255, 255, 0.922);
   color: black;

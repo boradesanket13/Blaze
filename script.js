@@ -93,7 +93,6 @@ darkModeToggle.addEventListener('click',()=>{
     console.log(darkMode);
   }
 })
-=======
 function myFunction(){
   var element = document.getElementById('box');
    element.classList.toggle("light-mode");
