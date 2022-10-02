@@ -65,3 +65,31 @@ function onTempChange() {
   document.querySelector(".temp").innerText = temp1save + "℃" :
   document.querySelector(".temp").innerText = temp2save + "℉";
 }
+
+let darkMode = localStorage.getItem('darkMode');
+const darkModeToggle = document.querySelector('.toggle-btn')
+//check if Dark mode is enabled
+// if its enabled turn it off
+// else turn it on
+const enableDarkMode = ()=>{
+document.body.classList.add('darkmode');
+localStorage.setItem('darkMode','enabled')
+}
+
+const disableDarkMode = ()=>{
+document.body.classList.remove('darkmode');
+localStorage.setItem('darkMode',null)
+}
+
+
+darkModeToggle.addEventListener('click',()=>{
+  darkMode = localStorage.getItem('darkMode');
+  if (darkMode != 'enabled') {
+    enableDarkMode();
+    console.log(darkMode);
+  }
+  else{
+    disableDarkMode();
+    console.log(darkMode);
+  }
+})
