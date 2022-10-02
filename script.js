@@ -7,7 +7,6 @@ let weather = {
         city +
         "&units=metric&appid=" +
         this.apiKey
-        
     )
       .then((response) => {
         if (!response.ok) {
