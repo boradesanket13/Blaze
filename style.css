@@ -10,7 +10,12 @@ body {
   background-size: cover;
   font-size: 120%;
 }
-
+.c{
+  margin-left: -40px;
+}
+.f{
+  margin-left: -70px;
+}
 .card {
   background: #000000d0;
   color: white;
@@ -140,10 +145,11 @@ input:checked + .slider:before {
 .fahrenheit
 {
   display: none;
-}
-.fahrenheit, .celsius
-{
   color: white;
+}
+.celsius,.fahrenheit
+{
+  color: black;
   position: absolute;
   transform: translate(-50%,-50%);
   top: 50%;
