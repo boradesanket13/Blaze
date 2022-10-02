@@ -4,9 +4,10 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background: #222;
-  background-image: url('https://source.unsplash.com/1600x900/?landscape');
+  background-image: url("https://source.unsplash.com/1600x900/?landscape");
+  background-size: cover;
   font-size: 120%;
 }
 
@@ -56,6 +57,10 @@ button:hover {
 }
 
 h1.temp {
+  margin: 0;
+  margin-bottom: 0.4em;
+}
+h1.temp-F {
   margin: 0;
   margin-bottom: 0.4em;
 }
