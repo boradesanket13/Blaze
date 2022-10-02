@@ -32,7 +32,7 @@ body {
   justify-content: center;
 }
 
-button {
+#switch {
   margin: 0.5em;
   border-radius: 50%;
   border: none;
@@ -43,6 +43,7 @@ button {
   color: white;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+
 }
 
 input.search-bar {
@@ -101,6 +102,8 @@ h1.temp-F {
   width: 60px;
   height: 30px;
   margin-bottom: 15px;
+  margin-left: 75px;
+  margin-right: 75px;
 }
 .switch input {
   opacity: 0;
@@ -168,4 +171,19 @@ input:checked + .slider .celsius
 }
 .slider.round:before {
   border-radius: 50%;
+}
+.light-mode {
+  background-color: rgba(255, 255, 255, 0.922);
+  color: black;
+  opacity: 90%;
+}
+#toggler{
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 10%;
+  right: 10%;
+}
+input.change{
+  color: black;
 }
