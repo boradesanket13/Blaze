@@ -4,9 +4,9 @@ Created this Weather Forecasting website using Openweathermap API
 
 # Features 🌟
 👉 Search and get waether of any particular location <br> 
-👉 Get current city weather using geolocation
-👉 See images of city along with the weather
-👉 Responsive Design
+👉 Get current city weather using geolocation <br>
+👉 See images of city along with the weather <br>
+👉 Responsive Design <br>
 
 
 ## Check out the project here 💻
