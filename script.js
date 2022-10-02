@@ -65,3 +65,9 @@ function onTempChange() {
   document.querySelector(".temp").innerText = temp1save + "℃" :
   document.querySelector(".temp").innerText = temp2save + "℉";
 }
+function myFunction(){
+  var element = document.getElementById('box');
+   element.classList.toggle("light-mode");
+  var e2= document.getElementById('search');
+  e2.classList.toggle("change")
+}
