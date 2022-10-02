@@ -58,21 +58,10 @@ document
     }
   });
 
+weather.fetchWeather("Nashik");
 
 function onTempChange() {
   !document.querySelector("#checkbox").checked ? 
   document.querySelector(".temp").innerText = temp1save + "℃" :
   document.querySelector(".temp").innerText = temp2save + "℉";
-}
-
-const getCurrentCity = () => new Promise((resolve) => {
-  fetch("https://ipinfo.io/json")
-    .catch(err => resolve("Nashik"))
-    .then(response => response.json())
-    .then(data => resolve(data.city));
-})
-
-window.onload = async () => {
-  let currentCity = await getCurrentCity();
-  weather.fetchWeather(currentCity);
 }
