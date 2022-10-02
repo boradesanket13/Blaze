@@ -141,14 +141,14 @@ input:checked + .slider:before {
   position: absolute;
   transform: translate(-50%,-50%);
   top: 50%;
-  left: 50%;
-  font-size: 10px;
+  left: 140%;
+  font-size: 30px;
   font-family: Verdana, sans-serif;
 }
 
-input:checked+ .slider.fahrenheit
+input:checked+ .slider .fahrenheit
 {display: block;}
-input:checked + .slider.celsius
+input:checked + .slider .celsius
 {display: none;}
 
 .slider.round {
