@@ -26,7 +26,8 @@ let weather = {
       "https://openweathermap.org/img/wn/" + icon + ".png";
     document.querySelector(".description").innerText = description;
     document.querySelector(".temp").innerText = temp + "°C";
-    document.querySelector(".temp-F").innerText = temp * (9 / 5) + 32 + "°F";
+    document.querySelector(".temp-F").innerText =
+      (temp * (9 / 5) + 32).toFixed(2) + "°F";
     document.querySelector(".humidity").innerText =
       "Humidity: " + humidity + "%";
     document.querySelector(".wind").innerText =
