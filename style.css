@@ -169,3 +169,41 @@ input:checked + .slider .celsius
 .slider.round:before {
   border-radius: 50%;
 }
+
+  /* clock css  */
+.clock-container {
+  background-color: #000000d0;
+  width: 250px;
+  height: 115px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  margin-left: 85px;
+}
+
+#time {
+ color: rgb(132, 249, 210);
+  position: absolute;
+  left: 40px;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 3rem;
+}
+
+#session {
+  color: rgb(255, 0, 200);
+  position: absolute;
+  top: 60px;
+  left: 211px;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 10px;
+}
+
+.day {
+  color: rgb(156, 227, 50);
+  position: absolute;
+  left: 40px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+}
