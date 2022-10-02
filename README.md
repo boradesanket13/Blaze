@@ -1,6 +1,6 @@
 # Weather App using openweathermap API ⛅
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-Created this Weather Forecasting website using Openweathermap API 
+Created this Weather Forecasting website using [Openweathermap API](https://openweathermap.org/api) 
 
 # Features 🌟
 👉 Search and get waether of any particular location <br> 
