@@ -32,8 +32,11 @@
   </head>
 
 <body>
-  <!-- <button onclick="myFunction()" id="toggler">Toggle dark mode</button> -->
-  <div class="card" id="box">
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+  <div class="card">
+    <div class="toggle-btn"><ion-icon name="contrast" class="contrast"></ion-icon></div>
+
     <div class="search">
       <input type="text" class="search-bar" placeholder="Search" id="search">
       <button id="switch"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em"
@@ -54,13 +57,7 @@
             <span class="fahrenheit f">℉</span>
           </div>
         </label>
-        <label class="switch" id="theme">
-          <input type="checkbox" id="toggler" onchange="myFunction()">
-          <div class="slider round">
-            <span class="celsius c">D</span>
-            <span class="fahrenheit f">L</span>
-          </div>
-        </label>
+       
       </div>
       <div class="flex">
         <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />

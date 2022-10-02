@@ -9,6 +9,7 @@ body {
   background-image: url("https://source.unsplash.com/1600x900/?landscape");
   background-size: cover;
   font-size: 120%;
+  transition: all 1.2s;
 }
 .c{
   margin-left: -40px;
@@ -17,6 +18,7 @@ body {
   margin-left: -70px;
 }
 .card {
+  position: relative;
   background: #000000d0;
   color: white;
   padding: 2em;
@@ -102,7 +104,6 @@ h1.temp-F {
   width: 60px;
   height: 30px;
   margin-bottom: 15px;
-  margin-left: 75px;
   margin-right: 75px;
 }
 .switch input {
@@ -171,6 +172,24 @@ input:checked + .slider .celsius
 }
 .slider.round:before {
   border-radius: 50%;
+}
+
+
+.toggle-btn{
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  padding: 20px;
+}
+
+.contrast{
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #222;
+}
+
+.darkmode{
+  filter: invert(1);
 }
 .light-mode {
   background-color: rgba(255, 255, 255, 0.922);
