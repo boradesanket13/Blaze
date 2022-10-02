@@ -60,6 +60,10 @@ h1.temp {
   margin: 0;
   margin-bottom: 0.4em;
 }
+h1.temp-F {
+  margin: 0;
+  margin-bottom: 0.4em;
+}
 
 .flex {
   display: flex;
@@ -84,4 +88,10 @@ h1.temp {
   position: absolute;
   top: 0;
   left: 20px;
+}
+
+.temperature {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 40px;
 }
