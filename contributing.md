@@ -81,4 +81,9 @@ git push -u origin <your_branch_name>
 
 
 **15** Voila!<br>
+**16** Woohoo! You have made a PR to the Sanket1308/Weather-App 💥 . Wait for your submission to be accepted and your PR to be merged.
+
+Thank you for your interest in contributing to our Repo!🏼
+
+Kudos to you🎈
 ![Whoohooo!](https://media3.giphy.com/media/sgswHaZw5yklq/giphy.gif?cid=ecf05e4752791acvsi719im8d4lib8z33uxbga6secdplwq2&rid=giphy.gif)
