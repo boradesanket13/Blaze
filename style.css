@@ -74,6 +74,7 @@ body {
 
 }
 
+
 input.search-bar {
   border: none;
   outline: none;
@@ -86,8 +87,16 @@ input.search-bar {
   width: calc(100% - 100px);
 }
 
+button{
+  box-shadow: inset 0 0 0 0 red;
+  transition: ease-in-out 0.9s;
+
+}
+
 button:hover {
   background: #7c7c7c6b;
+  box-shadow: inset 50px 0 0 0 red;
+
 }
 
 h1.temp {
@@ -131,6 +140,7 @@ h1.temp-F {
   height: 30px;
   margin-bottom: 15px;
   margin-right: 75px;
+
 }
 .switch input {
   opacity: 0;
@@ -206,6 +216,7 @@ input:checked + .slider .celsius
   right: 1rem;
   top: 1rem;
   padding: 20px;
+  cursor: pointer;
 }
 
 .contrast{
@@ -229,6 +240,7 @@ input:checked + .slider .celsius
   top: 10%;
   right: 10%;
 }
+
 input.change{
   color: black;
 }
