@@ -42,10 +42,10 @@ let weather = {
         document.querySelector(".description").innerText = description
 
         !document.querySelector("#checkbox").checked
-            ? (document.querySelector(".temp").innerText = temp + "℃")
-            : (document.querySelector(".temp").innerText = temp2 + "℉")
-        temp1save = temp
-        temp2save = temp2
+            ? (document.querySelector(".temp").innerText = temp.toFixed(2) + "℃")
+            : (document.querySelector(".temp").innerText = temp2.toFixed(2) + "℉")
+        temp1save = temp.toFixed(2)
+        temp2save = temp2.toFixed(2)
 
         document.querySelector(".humidity").innerText =
             "Humidity: " + humidity + "%"
