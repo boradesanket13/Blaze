@@ -1,6 +1,7 @@
-# Weather App using openweathermap API ⛅
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-Created this Weather Forecasting website using [Openweathermap API](https://openweathermap.org/api) 
+ # ⛅️ Weather-To-Go ⛅️
+
+Created this Weather Forecasting website using <a href="https://openweathermap.org/api">🌦 Openweathermap API 🌦</a>
 
 # Features 🌟
 👉 Search and get weather of any particular location. <br> 
@@ -9,28 +10,30 @@ Created this Weather Forecasting website using [Openweathermap API](https://open
 👉 Responsive Design. <br>
 
 
-## Check out the project here 💻
+## Check out the project here -> [💻](https://sanket1308-weather-app.netlify.app/)
 
-[https://sanket1308-weather-app.netlify.app](https://sanket1308-weather-app.netlify.app/)
+***Weather Fetching Method Display Photos***
 
 ![Screenshot](assets/Demo.jpeg)
 
 ## Contributing 🏆
-Contributions are always welcome!
-See `contributing.md` for ways to get started.
-Please adhere to this project's `code of conduct`.
+
+#### Contributions are always welcome!
+
+See [`Contributing Guideline`](https://github.com/Sanket1308/Weather-App/blob/main/contributing.md) for ways to get started.
+
+**Please adhere to this project's [`Code of Conduct`](https://github.com/Sanket1308/Weather-App/blob/main/code-of-conduct.md).**
 
 
-## Documentation 📃
-[Documentation](https://openweathermap.org/api)
+## API Documentation -> [📃](https://openweathermap.org/api)
 
 
-## License 📱
+## License -> [📱](https://choosealicense.com/licenses/mit/)
 
-[MIT](https://choosealicense.com/licenses/mit/)
+MIT License
 
 ## Feedback 🙋‍
-If you have any feedback, please reach out to us at boradesanket13@gmail.com
+If you have any feedback, please reach out to us at <a src="mailto:boradesanket13@gmail.com">boradesanket13@gmail.com</a>
 
 ## Links 🔗
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://sanketborade.me)
