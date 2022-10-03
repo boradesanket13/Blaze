@@ -11,6 +11,32 @@ body {
   font-size: 120%;
   transition: all 1.2s;
 }
+#confirm {
+  display: none;
+  box-sizing: border-box;
+  text-align: center; 
+  background: #8b828254;
+ color: white;
+ padding: 2em;
+ border-radius: 30px;
+ width: 100%;
+ max-width: 420px;
+}
+#confirm button {
+  background-color: #49484A;
+  color: white;
+  border-radius: 8px;
+  display: inline-block;
+  border-radius: 12px;
+  border: 2px solid #49484A;
+  padding: 5px;
+  text-align: center;
+  width: 100px;
+  cursor: pointer;
+}
+#confirm .message {
+  text-align: left;
+}
 .c{
   margin-left: -40px;
 }
