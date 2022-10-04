@@ -118,6 +118,28 @@ h1.temp-F {
   margin-left: 8px;
 }
 
+.weather
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 4px;
+  margin: 6.9px;
+}
+.flexnew
+{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  /* margin:10px; */
+}
+.city
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 .weather.loading {
   visibility: hidden;
   max-height: 20px;
@@ -138,8 +160,9 @@ h1.temp-F {
   display: inline-block;
   width: 60px;
   height: 30px;
-  margin-bottom: 15px;
-  margin-right: 75px;
+  /* margin-bottom: 15px; */
+  margin-right: 25px;
+  margin-bottom: 40px;
 
 }
 .switch input {
@@ -244,3 +267,33 @@ input:checked + .slider .celsius
 input.change{
   color: black;
 }
+h2
+{
+  margin-top: 5px;
+  margin: 8px;
+}
+h1.temp
+{
+  margin-top: 5px;
+  margin: 8px;
+  margin-bottom: 40px;
+}
+.description
+{
+  margin: 8px;
+}
+.humidity
+{
+  margin: 8px;
+}
+.wind
+{
+  margin: 8px;
+}
+/* .centir 
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+} */
