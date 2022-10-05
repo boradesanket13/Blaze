@@ -34,7 +34,6 @@ MIT License
 
 <h2>Project Contributors⭐</h2> 
 
----
   <a name = "contributors"></a>
 <table align="center">
 <tr>
