@@ -32,6 +32,21 @@ See [`Contributing Guideline`](https://github.com/Sanket1308/Weather-App/blob/ma
 
 MIT License
 
+<h2>Project Contributors⭐</h2> 
+
+---
+  <a name = "contributors"></a>
+<table align="center">
+<tr>
+<td>
+<a href="https://github.com/Sanket1308/Weather-App/graphs/contributors" align="center">
+  <img src="https://contrib.rocks/image?repo=Sanket1308/Weather-App" /> 
+</a>
+</td>
+</tr>
+</table>
+
+
 ## Feedback 🙋‍
 If you have any feedback, please reach out to us at <a src="mailto:boradesanket13@gmail.com">boradesanket13@gmail.com</a>
 
