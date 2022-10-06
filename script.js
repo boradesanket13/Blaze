@@ -57,6 +57,8 @@ let weather = {
     },
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value)
+        document.getElementById("search").focus();
+        document.getElementById("search").value = "";
     }
 }
 
@@ -70,6 +72,7 @@ document
         if (event.key == "Enter") {
             weather.search()
         }
+       
     })
 
 weather.fetchWeather("Nashik")
