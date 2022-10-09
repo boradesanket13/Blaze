@@ -20,13 +20,14 @@ let temp1save,
     temp2save = 0
 let weather = {
     apiKey: "e1b292964b3c86ad361260f80c9496e0",
-    fetchWeather: function (city) {
-        fetch(
-            "https://api.openweathermap.org/data/2.5/weather?q=" +
-                city +
-                "&units=metric&appid=" +
-                this.apiKey
-        )
+    fetchWeather: function (city, lat = null, lon = null) {
+        if (lat && lon) {
+            fetch(
+                "https://api.openweathermap.org/data/2.5/weather?lat="
+                + lat + "&lon="
+                + lon + "&units=metric&appid=" 
+                + this.apiKey
+            )
             .then((response) => {
                 if (!response.ok) {
                     functionAlert()
@@ -34,6 +35,23 @@ let weather = {
                 return response.json()
             })
             .then((data) => this.displayWeather(data))
+        }
+        else if (city) {
+            fetch(
+                "https://api.openweathermap.org/data/2.5/weather?q=" +
+                city +
+                "&units=metric&appid=" +
+                this.apiKey
+            )
+            .then((response) => {
+                if (!response.ok) {
+                    functionAlert()
+                }
+                return response.json()
+            })
+            .then((data) => this.displayWeather(data))
+        }
+        
     },
     displayWeather: function (data) {
         const { name } = data
@@ -82,7 +100,15 @@ document
        
     })
 
-weather.fetchWeather("Nashik")
+// ask for location permission
+// if granted: show user's location weather data
+// if blocked: show default location weather data
+navigator.geolocation.getCurrentPosition((position)=>{
+    const { latitude, longitude } = position.coords;
+    weather.fetchWeather(null, latitude, longitude);
+},
+() => weather.fetchWeather("Nashik")
+)
 
 function onTempChange() {
     !document.querySelector("#checkbox").checked
