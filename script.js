@@ -1,4 +1,9 @@
+function disapper() {
+    document.querySelector(".weather").style.display = "none"
+}
+
 function functionAlert(msg, myYes) {
+    disapper()
     var confirmBox = $("#confirm")
     confirmBox.find(".message").text(msg)
     confirmBox
@@ -42,8 +47,10 @@ let weather = {
         document.querySelector(".description").innerText = description
 
         !document.querySelector("#checkbox").checked
-            ? (document.querySelector(".temp").innerText = temp.toFixed(2) + "℃")
-            : (document.querySelector(".temp").innerText = temp2.toFixed(2) + "℉")
+            ? (document.querySelector(".temp").innerText =
+                  temp.toFixed(2) + "℃")
+            : (document.querySelector(".temp").innerText =
+                  temp2.toFixed(2) + "℉")
         temp1save = temp.toFixed(2)
         temp2save = temp2.toFixed(2)
 
