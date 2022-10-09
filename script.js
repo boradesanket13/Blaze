@@ -121,3 +121,23 @@ function myFunction() {
     var e2 = document.getElementById("search")
     e2.classList.toggle("change")
 }
+let now = new Date();
+
+let dt = new Date(1000);
+
+let newDate = new Date(3020, 4, 6, 9, 3, 2, 34);
+
+let yr = newDate.getFullYear();
+
+let dat = newDate.getDate();
+
+let month = newDate.getMonth();
+
+let hours = newDate.getHours();
+
+newDate.setDate(8);
+newDate.setMinutes(29);
+setInterval(updateTime, 1000);
+function updateTime() {
+    time.innerHTML = new Date();
+}
