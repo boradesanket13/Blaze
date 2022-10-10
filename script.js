@@ -53,6 +53,8 @@ let weather = {
                   temp2.toFixed(2) + "℉")
         temp1save = temp.toFixed(2)
         temp2save = temp2.toFixed(2)
+        speed1 = speed.toFixed(2)
+        speed2 = (speed*0.62137).toFixed(2)
 
         document.querySelector(".humidity").innerText =
             "Humidity: " + humidity + "%"
@@ -86,8 +88,10 @@ weather.fetchWeather("Nashik")
 
 function onTempChange() {
     !document.querySelector("#checkbox").checked
-        ? (document.querySelector(".temp").innerText = temp1save + "℃")
-        : (document.querySelector(".temp").innerText = temp2save + "℉")
+        ? (document.querySelector(".temp").innerText = temp1save + "℃",
+          document.querySelector(".wind").innerText = "Wind speed: " + speed1 + " km/h")
+        : (document.querySelector(".temp").innerText = temp2save + "℉",
+          document.querySelector(".wind").innerText = "Wind speed: " + speed2 + " mph")
 }
 
 let darkMode = localStorage.getItem("darkMode")
