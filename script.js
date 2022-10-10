@@ -94,6 +94,10 @@ function onTempChange() {
           document.querySelector(".wind").innerText = "Wind speed: " + speed2 + " mph")
 }
 
+function reloadPage(){
+    location.reload()
+}
+
 let darkMode = localStorage.getItem("darkMode")
 const darkModeToggle = document.querySelector(".toggle-btn")
 //check if Dark mode is enabled
