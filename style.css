@@ -95,7 +95,7 @@ button{
 
 button:hover {
   background: #7c7c7c6b;
-  box-shadow: inset 50px 0 0 0 red;
+  box-shadow: inset 150px 0 0 0 red;
 
 }
 
