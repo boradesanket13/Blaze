@@ -14,7 +14,8 @@ Created this Weather Forecasting website using <a href="https://openweathermap.o
 
 ***Weather Fetching Method Display Photos***
 
-![Screenshot](assets/Demo.jpeg)
+![Screenshot in black](https://user-images.githubusercontent.com/86626640/195175338-4c39cf5f-f290-44d4-8746-bbe193e7adfa.png)
+![Screenshot in white](https://user-images.githubusercontent.com/86626640/195175118-8a309c40-3f0d-4e6d-b4be-22eb27c16dee.png)
 
 ## Contributing 🏆
 
