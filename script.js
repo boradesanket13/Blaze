@@ -25,16 +25,16 @@ let weather = {
             fetch(
                 "https://api.openweathermap.org/data/2.5/weather?lat="
                 + lat + "&lon="
-                + lon + "&units=metric&appid=" 
+                + lon + "&units=metric&appid="
                 + this.apiKey
             )
-            .then((response) => {
-                if (!response.ok) {
-                    functionAlert()
-                }
-                return response.json()
-            })
-            .then((data) => this.displayWeather(data))
+                .then((response) => {
+                    if (!response.ok) {
+                        functionAlert()
+                    }
+                    return response.json()
+                })
+                .then((data) => this.displayWeather(data))
         }
         else if (city) {
             fetch(
@@ -43,17 +43,17 @@ let weather = {
                 "&units=metric&appid=" +
                 this.apiKey
             )
-            .then((response) => {
-                if (!response.ok) {
-                    functionAlert()
-                }
-                return response.json()
-            })
-            .then((data) => this.displayWeather(data))
+                .then((response) => {
+                    if (!response.ok) {
+                        functionAlert()
+                    }
+                    return response.json()
+                })
+                .then((data) => this.displayWeather(data))
         }
-        
+
     },
-    displayWeather: function (data) {
+    displayWeather: async function (data) {
         const { name } = data
         const { icon, description } = data.weather[0]
         const { temp, humidity } = data.main
@@ -66,21 +66,39 @@ let weather = {
 
         !document.querySelector("#checkbox").checked
             ? (document.querySelector(".temp").innerText =
-                  temp.toFixed(2) + "℃")
+                temp.toFixed(2) + "℃")
             : (document.querySelector(".temp").innerText =
-                  temp2.toFixed(2) + "℉")
+                temp2.toFixed(2) + "℉")
         temp1save = temp.toFixed(2)
         temp2save = temp2.toFixed(2)
         speed1 = speed.toFixed(2)
-        speed2 = (speed*0.62137).toFixed(2)
+        speed2 = (speed * 0.62137).toFixed(2)
 
         document.querySelector(".humidity").innerText =
             "Humidity: " + humidity + "%"
         document.querySelector(".wind").innerText =
             "Wind speed: " + speed + " km/h"
         document.querySelector(".weather").classList.remove("loading")
-        document.body.style.backgroundImage =
-            "url('https://source.unsplash.com/1600x900/?" + name + "')"
+
+
+        var size;
+        const url = `https://source.unsplash.com/1600x900/?${name}`
+        await fetch(url).then(async (response) => {
+            await response.blob().then((myBlob) => {
+                size = myBlob.size;
+            });
+        });
+
+        if (size != 42433) {
+            document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')";
+            console.log('if')
+        }
+        else if (size === 42433) {
+            document.body.style.backgroundImage = "url('./assets/Default.jpg')"
+            console.log('else if')
+        }
+
+        console.log(size);
     },
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value)
@@ -99,28 +117,28 @@ document
         if (event.key == "Enter") {
             weather.search()
         }
-       
+
     })
 
 // ask for location permission
 // if granted: show user's location weather data
 // if blocked: show default location weather data
-navigator.geolocation.getCurrentPosition((position)=>{
+navigator.geolocation.getCurrentPosition((position) => {
     const { latitude, longitude } = position.coords;
     weather.fetchWeather(null, latitude, longitude);
 },
-() => weather.fetchWeather("Nashik")
+    () => weather.fetchWeather("Nashik")
 )
 
 function onTempChange() {
     !document.querySelector("#checkbox").checked
         ? (document.querySelector(".temp").innerText = temp1save + "℃",
-          document.querySelector(".wind").innerText = "Wind speed: " + speed1 + " km/h")
+            document.querySelector(".wind").innerText = "Wind speed: " + speed1 + " km/h")
         : (document.querySelector(".temp").innerText = temp2save + "℉",
-          document.querySelector(".wind").innerText = "Wind speed: " + speed2 + " mph")
+            document.querySelector(".wind").innerText = "Wind speed: " + speed2 + " mph")
 }
 
-function reloadPage(){
+function reloadPage() {
     location.reload()
 }
 
