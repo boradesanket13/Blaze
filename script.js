@@ -1,9 +1,10 @@
-function disapper() {
-    document.querySelector(".weather").style.display = "none"
+function divActive() {
+    document.querySelector(".weather").style.display = "flex"
+    document.querySelector("#confirm").style.display = "none"
 }
 
 function functionAlert(msg, myYes) {
-    disapper()
+    document.querySelector(".weather").style.display = "none"
     var confirmBox = $("#confirm")
     confirmBox.find(".message").text(msg)
     confirmBox
@@ -32,6 +33,9 @@ let weather = {
                 if (!response.ok) {
                     functionAlert()
                 }
+                else{
+                    divActive()
+                }
                 return response.json()
             })
             .then((data) => this.displayWeather(data))
@@ -46,6 +50,9 @@ let weather = {
             .then((response) => {
                 if (!response.ok) {
                     functionAlert()
+                }
+                else{
+                    divActive()
                 }
                 return response.json()
             })
@@ -99,7 +106,6 @@ document
         if (event.key == "Enter") {
             weather.search()
         }
-       
     })
 
 // ask for location permission
@@ -141,14 +147,9 @@ const disableDarkMode = () => {
 
 darkModeToggle.addEventListener("click", () => {
     darkMode = localStorage.getItem("darkMode")
-    if (darkMode != "enabled") {
-        enableDarkMode()
-        console.log(darkMode)
-    } else {
-        disableDarkMode()
-        console.log(darkMode)
-    }
+    darkMode != "enabled" ?  enableDarkMode() : disableDarkMode()
 })
+
 function myFunction() {
     var element = document.getElementById("box")
     element.classList.toggle("light-mode")
