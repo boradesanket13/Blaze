@@ -1,5 +1,5 @@
 body {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -7,9 +7,11 @@ body {
   font-family: "Open Sans", sans-serif;
   background: #222;
   background-image: url("https://source.unsplash.com/1600x900/?landscape");
+  background-repeat: no-repeat;
   background-size: cover;
   font-size: 120%;
   transition: all 1.2s;
+  overflow-y: hidden;
 }
 #confirm {
   display: none;
@@ -44,6 +46,7 @@ body {
   margin-left: -70px;
 }
 .card {
+  margin-left: 35%;
   position: relative;
   background: #000000d0;
   color: white;
@@ -51,7 +54,7 @@ body {
   border-radius: 30px;
   width: 100%;
   max-width: 420px;
-  margin: 1em;
+  margin-top: 3em !important;
 }
 
 .search {
@@ -297,3 +300,79 @@ h1.temp
   justify-content: space-between;
   flex-direction: row;
 } */
+footer {
+  margin-top: 32px;
+    position: relative;
+    width: 100%;
+    background-color: #4e3f3fad;
+    color: white;
+    bottom: 0;
+    text-align: center;
+  }
+  .foot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.2rem 0;
+    gap: 0.3rem;
+  }
+  
+  .icons ul {
+    display: flex;
+    margin: 0.7rem 0;
+    padding: 0;
+  }
+  
+  .icons ul li {
+    list-style: none;
+  }
+  
+  .icons ul li a {
+    display: block;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    margin: 0 0 0 20px;
+    padding-top: 3px;
+    border-radius: 50%;
+    z-index: 1;
+    border: 2px solid #fff;
+  }
+  
+  .icons ul li a .icon {
+    position: relative;
+    color: #262626;
+    transition: 0.5s;
+    z-index: 3;
+  }
+  footer p {
+    margin-top: -15px;
+    margin-left: 4px;
+    align-items: center;
+  }
+  .icons ul li a:hover{
+    background-color: red;
+    border: 2px solid red;
+  }
+  .icons ul li a .icon:hover{
+    color: #fff;
+  }
+  
+  @media (max-width:800px)
+  {
+    .card {
+      margin-left: 10%;
+  }
+  footer p{
+    margin-top: -13px;
+  }
+  .icons ul li a {
+    width: 28px;
+    height: 26px;
+    margin-top: -6px;
+  }
+  }
