@@ -14,21 +14,21 @@ body {
 #confirm {
   display: none;
   box-sizing: border-box;
-  text-align: center; 
+  text-align: center;
   background: #8b828254;
- color: white;
- padding: 2em;
- border-radius: 30px;
- width: 100%;
- max-width: 420px;
+  color: white;
+  padding: 2em;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
 }
 #confirm button {
-  background-color: #49484A;
+  background-color: #49484a;
   color: white;
   border-radius: 8px;
   display: inline-block;
   border-radius: 12px;
-  border: 2px solid #49484A;
+  border: 2px solid #49484a;
   padding: 5px;
   text-align: center;
   width: 100px;
@@ -37,10 +37,10 @@ body {
 #confirm .message {
   text-align: left;
 }
-.c{
+.c {
   margin-left: -40px;
 }
-.f{
+.f {
   margin-left: -70px;
 }
 .card {
@@ -71,9 +71,7 @@ body {
   color: white;
   cursor: pointer;
   transition: 0.2s ease-in-out;
-
 }
-
 
 input.search-bar {
   border: none;
@@ -87,16 +85,14 @@ input.search-bar {
   width: calc(100% - 100px);
 }
 
-button{
+button {
   box-shadow: inset 0 0 0 0 red;
   transition: ease-in-out 0.9s;
-
 }
 
 button:hover {
   background: #7c7c7c6b;
   box-shadow: inset 150px 0 0 0 red;
-
 }
 
 h1.temp {
@@ -118,8 +114,7 @@ h1.temp-F {
   margin-left: 8px;
 }
 
-.weather
-{
+.weather {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -127,15 +122,13 @@ h1.temp-F {
   padding: 4px;
   margin: 6.9px;
 }
-.flexnew
-{
+.flexnew {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   flex-wrap: wrap;
   /* margin:10px; */
 }
-.city
-{
+.city {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -163,7 +156,6 @@ h1.temp-F {
   /* margin-bottom: 15px; */
   margin-right: 25px;
   margin-bottom: 40px;
-
 }
 .switch input {
   opacity: 0;
@@ -178,8 +170,8 @@ h1.temp-F {
   right: 0;
   bottom: 0;
   background-color: rgb(114, 112, 112);
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 .slider:before {
   position: absolute;
@@ -189,15 +181,15 @@ h1.temp-F {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
@@ -205,26 +197,27 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-.fahrenheit
-{
+.fahrenheit {
   display: none;
   color: white;
 }
-.celsius,.fahrenheit
-{
+.celsius,
+.fahrenheit {
   color: black;
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   top: 50%;
   left: 140%;
   font-size: 15px;
   font-family: Verdana, sans-serif;
 }
 
-input:checked+ .slider .fahrenheit
-{display: block;}
-input:checked + .slider .celsius
-{display: none;}
+input:checked + .slider .fahrenheit {
+  display: block;
+}
+input:checked + .slider .celsius {
+  display: none;
+}
 
 .slider.round {
   border-radius: 34px;
@@ -233,8 +226,7 @@ input:checked + .slider .celsius
   border-radius: 50%;
 }
 
-
-.toggle-btn{
+.toggle-btn {
   position: fixed;
   right: 1rem;
   top: 1rem;
@@ -242,13 +234,13 @@ input:checked + .slider .celsius
   cursor: pointer;
 }
 
-.contrast{
+.contrast {
   padding: 20px;
   border-radius: 15px;
   background-color: #222;
 }
 
-.darkmode{
+.darkmode {
   filter: invert(1);
 }
 .light-mode {
@@ -256,7 +248,7 @@ input:checked + .slider .celsius
   color: black;
   opacity: 90%;
 }
-#toggler{
+#toggler {
   background-color: black;
   color: white;
   position: fixed;
@@ -264,30 +256,22 @@ input:checked + .slider .celsius
   right: 10%;
 }
 
-input.change{
+input.change {
   color: black;
 }
-h2
-{
+h2 {
   margin-top: 5px;
   margin: 8px;
 }
-h1.temp
-{
+h1.temp {
   margin-top: 5px;
   margin: 8px;
   margin-bottom: 40px;
 }
-.description
-{
-  margin: 8px;
-}
-.humidity
-{
-  margin: 8px;
-}
-.wind
-{
+.description,
+.humidity,
+.wind,
+#time {
   margin: 8px;
 }
 /* .centir 
