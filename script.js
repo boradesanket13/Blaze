@@ -1,21 +1,3 @@
-function disapper() {
-  document.querySelector(".weather").style.display = "none";
-}
-
-function functionAlert(msg, myYes) {
-  disapper();
-  var confirmBox = $("#confirm");
-  confirmBox.find(".message").text(msg);
-  confirmBox
-    .find(".yes")
-    .unbind()
-    .click(function () {
-      confirmBox.hide();
-    });
-  confirmBox.find(".yes").click(myYes);
-  confirmBox.show();
-}
-
 let temp1save,
   temp2save = 0,
   showTime;
@@ -23,51 +5,47 @@ let weather = {
   apiKey: "e1b292964b3c86ad361260f80c9496e0",
   fetchWeather: function (city, lat = null, lon = null) {
     if (lat && lon) {
-      fetch(
-        "https://api.openweathermap.org/data/2.5/weather?lat=" +
-          lat +
-          "&lon=" +
-          lon +
-          "&units=metric&appid=" +
-          this.apiKey
-      )
-        .then((response) => {
-          if (!response.ok) {
-            functionAlert();
-          }
-          return response.json();
-        })
-        .then((data) => this.displayWeather(data));
+      this.fetchData(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${this.apiKey}`
+      );
     } else if (city) {
-      fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=" +
-          city +
-          "&units=metric&appid=" +
-          this.apiKey
-      )
-        .then((response) => {
-          if (!response.ok) {
-            functionAlert();
-          }
-          return response.json();
-        })
-        .then((data) => this.displayWeather(data));
+      this.fetchData(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`
+      );
     }
   },
+  fetchData: function (url) {
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error!");
+        }
+        return response.json();
+      })
+      .then((data) => this.displayWeather(data))
+      .catch((err) => {
+        this.displayAlert(err.message, () => {});
+      });
+  },
   displayWeather: function (data) {
-    const { name, timezone } = data;
-    const { icon, description } = data.weather[0];
-    const { temp, humidity } = data.main;
+    const {
+      name,
+      timezone,
+      main: { temp, humidity },
+      wind: { speed },
+      weather: [{ icon, description }],
+    } = data;
+    console.log(data);
     const temp2 = temp * 1.8 + 32;
-    const { speed } = data.wind;
-    document.querySelector(".city").innerText = "Weather in " + name;
-    document.querySelector(".icon").src =
-      "https://openweathermap.org/img/wn/" + icon + ".png";
+    document.querySelector(".city").innerText = `Weather in ${name}`;
+    document.querySelector(
+      ".icon"
+    ).src = `https://openweathermap.org/img/wn/${icon}.png`;
     document.querySelector(".description").innerText = description;
 
     !document.querySelector("#checkbox").checked
-      ? (document.querySelector(".temp").innerText = temp.toFixed(2) + "℃")
-      : (document.querySelector(".temp").innerText = temp2.toFixed(2) + "℉");
+      ? (document.querySelector(".temp").innerText = `${temp.toFixed(2)}℃`)
+      : (document.querySelector(".temp").innerText = `${temp2.toFixed(2)}℉`);
     temp1save = temp.toFixed(2);
     temp2save = temp2.toFixed(2);
     speed1 = speed.toFixed(2);
@@ -89,13 +67,22 @@ let weather = {
         time.toLocaleDateString();
     }, 1000);
 
-    document.querySelector(".humidity").innerText =
-      "Humidity: " + humidity + "%";
-    document.querySelector(".wind").innerText =
-      "Wind speed: " + speed + " km/h";
+    document.querySelector(".humidity").innerText = `Humidity: ${humidity}%`;
+    document.querySelector(".wind").innerText = `Wind speed: ${speed} km/h`;
     document.querySelector(".weather").classList.remove("loading");
-    document.body.style.backgroundImage =
-      "url('https://source.unsplash.com/1600x900/?" + name + "')";
+    document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`;
+  },
+  displayAlert: function (msg, myYes) {
+    const confirmBox = document.querySelector("#confirm");
+    const weatherBox = document.querySelector(".weather");
+    weatherBox.style.display = "none";
+    confirmBox.style.display = "block";
+    confirmBox.querySelector(".message").innerText = msg;
+    confirmBox.querySelector(".yes").addEventListener("click", () => {
+      myYes();
+      weatherBox.removeAttribute("style");
+      confirmBox.removeAttribute("style");
+    });
   },
   search: function () {
     clearInterval(showTime);
@@ -130,12 +117,14 @@ navigator.geolocation.getCurrentPosition(
 
 function onTempChange() {
   !document.querySelector("#checkbox").checked
-    ? ((document.querySelector(".temp").innerText = temp1save + "℃"),
-      (document.querySelector(".wind").innerText =
-        "Wind speed: " + speed1 + " km/h"))
-    : ((document.querySelector(".temp").innerText = temp2save + "℉"),
-      (document.querySelector(".wind").innerText =
-        "Wind speed: " + speed2 + " mph"));
+    ? ((document.querySelector(".temp").innerText = `${temp1save}℃`),
+      (document.querySelector(
+        ".wind"
+      ).innerText = `Wind speed: ${speed1} km/h`))
+    : ((document.querySelector(".temp").innerText = `${temp2save}℉`),
+      (document.querySelector(
+        ".wind"
+      ).innerText = `Wind speed: ${speed2} mph`));
 }
 
 function reloadPage() {
