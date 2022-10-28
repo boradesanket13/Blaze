@@ -1,3 +1,18 @@
+:root {
+  --body: #222;
+  --black: #000000;
+  --white: #ffffff;
+  --card: #000000d0;
+  --confirm-body: #8b828254;
+  --confirm-button: #49484a;
+  --slider: #727070;
+  --slider-checked: #2196f3;
+  --grey: #7c7c7c2b;
+  --grey-hover: #7c7c7c6b;
+  --red: #ff0000;
+  --light-mode: #ffffffeb;
+  --icon: #262626;
+}
 body {
   /* display: flex; */
   justify-content: center;
@@ -5,7 +20,7 @@ body {
   height: 100vh;
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  background: #222;
+  background: var(--body);
   background-image: url("https://source.unsplash.com/1600x900/?landscape");
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,20 +32,20 @@ body {
   display: none;
   box-sizing: border-box;
   text-align: center;
-  background: #8b828254;
-  color: white;
+  background: var(--confirm-body);
+  color: var(--white);
   padding: 2em;
   border-radius: 30px;
   width: 100%;
   max-width: 420px;
 }
 #confirm button {
-  background-color: #49484a;
-  color: white;
+  background-color: var(--confirm-button);
+  color: var(--white);
   border-radius: 8px;
   display: inline-block;
   border-radius: 12px;
-  border: 2px solid #49484a;
+  border: 2px solid var(--confirm-button);
   padding: 5px;
   text-align: center;
   width: 100px;
@@ -48,8 +63,8 @@ body {
 .card {
   margin-left: 35%;
   position: relative;
-  background: #000000d0;
-  color: white;
+  background: var(--card);
+  color: var(--white);
   padding: 2em;
   border-radius: 30px;
   width: 100%;
@@ -70,8 +85,8 @@ body {
   height: 44px;
   width: 44px;
   outline: none;
-  background: #7c7c7c2b;
-  color: white;
+  background: var(--grey);
+  color: var(--white);
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
@@ -81,21 +96,21 @@ input.search-bar {
   outline: none;
   padding: 0.4em 1em;
   border-radius: 24px;
-  background: #7c7c7c2b;
-  color: white;
+  background: var(--grey);
+  color: var(--white);
   font-family: inherit;
   font-size: 105%;
   width: calc(100% - 100px);
 }
 
 button {
-  box-shadow: inset 0 0 0 0 red;
+  box-shadow: inset 0 0 0 0 var(--red);
   transition: ease-in-out 0.9s;
 }
 
 button:hover {
-  background: #7c7c7c6b;
-  box-shadow: inset 150px 0 0 0 red;
+  background: var(--grey-hover);
+  box-shadow: inset 150px 0 0 0 var(--red);
 }
 
 h1.temp {
@@ -145,7 +160,7 @@ h1.temp-F {
 .weather.loading:after {
   visibility: visible;
   content: "Loading...";
-  color: white;
+  color: var(--white);
   position: absolute;
   top: 0;
   left: 20px;
@@ -172,7 +187,7 @@ h1.temp-F {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(114, 112, 112);
+  background-color: var(--slider);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -183,16 +198,16 @@ h1.temp-F {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--white);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: var(--slider-checked);
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px var(--slider-checked);
 }
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
@@ -202,11 +217,11 @@ input:checked + .slider:before {
 
 .fahrenheit {
   display: none;
-  color: white;
+  color: var(--white);
 }
 .celsius,
 .fahrenheit {
-  color: black;
+  color: var(--black);
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -240,27 +255,39 @@ input:checked + .slider .celsius {
 .contrast {
   padding: 20px;
   border-radius: 15px;
-  background-color: #222;
+  background-color: var(--body);
 }
 
 .darkmode {
-  filter: invert(1);
+  --body: #ddd;
+  --black: #ffffff;
+  --white: #000000;
+  --card: #ffffffd0;
+  --confirm-body: #8b828254;
+  --confirm-button: #49484a;
+  --slider: #727070;
+  --slider-checked: #2196f3;
+  --grey: #8383832b;
+  --grey-hover: #8383836b;
+  --red: #ff0000;
+  --light-mode: #ffffffeb;
+  --icon: #d9d9d9;
 }
 .light-mode {
-  background-color: rgba(255, 255, 255, 0.922);
-  color: black;
+  background-color: var(--light-mode);
+  color: var(--black);
   opacity: 90%;
 }
 #toggler {
-  background-color: black;
-  color: white;
+  background-color: var(--black);
+  color: var(--white);
   position: fixed;
   top: 10%;
   right: 10%;
 }
 
 input.change {
-  color: black;
+  color: var(--black);
 }
 h2 {
   margin-top: 5px;
@@ -287,72 +314,71 @@ h1.temp {
 
 footer {
   margin-top: 32px;
-    position: relative;
-    width: 100%;
-    background-color: #4e3f3fad;
-    color: white;
-    bottom: 0;
-    text-align: center;
-  }
-  .foot{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0.2rem 0;
-    gap: 0.3rem;
-  }
-  
-  .icons ul {
-    display: flex;
-    margin: 0.7rem 0;
-    padding: 0;
-  }
-  
-  .icons ul li {
-    list-style: none;
-  }
-  
-  .icons ul li a {
-    display: block;
-    position: relative;
-    width: 35px;
-    height: 35px;
-    background-color: #fff;
-    text-align: center;
-    line-height: 20px;
-    font-size: 20px;
-    margin: 0 0 0 20px;
-    padding-top: 3px;
-    border-radius: 50%;
-    z-index: 1;
-    border: 2px solid #fff;
-  }
-  
-  .icons ul li a .icon {
-    position: relative;
-    color: #262626;
-    transition: 0.5s;
-    z-index: 3;
+  position: relative;
+  width: 100%;
+  background-color: var(--card);
+  color: var(--white);
+  bottom: 0;
+  text-align: center;
+}
+.foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.2rem 0;
+  gap: 0.3rem;
+}
+
+.icons ul {
+  display: flex;
+  margin: 0.7rem 0;
+  padding: 0;
+}
+
+.icons ul li {
+  list-style: none;
+}
+
+.icons ul li a {
+  display: block;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background-color: var(--white);
+  text-align: center;
+  line-height: 20px;
+  font-size: 20px;
+  margin: 0 0 0 20px;
+  padding-top: 3px;
+  border-radius: 50%;
+  z-index: 1;
+  border: 2px solid var(--white);
+}
+
+.icons ul li a .icon {
+  position: relative;
+  color: var(--icon);
+  transition: 0.5s;
+  z-index: 3;
+}
+footer p {
+  margin-top: -15px;
+  margin-left: 4px;
+  align-items: center;
+}
+.icons ul li a:hover {
+  background-color: var(--red);
+  border: 2px solid var(--red);
+}
+.icons ul li a .icon:hover {
+  color: var(--white);
+}
+
+@media (max-width: 800px) {
+  .card {
+    margin-left: 10%;
   }
   footer p {
-    margin-top: -15px;
-    margin-left: 4px;
-    align-items: center;
-  }
-  .icons ul li a:hover{
-    background-color: red;
-    border: 2px solid red;
-  }
-  .icons ul li a .icon:hover{
-    color: #fff;
-  }
-  
-  @media (max-width:800px)
-  {
-    .card {
-      margin-left: 10%;
-  }
-  footer p{
     margin-top: -13px;
   }
   .icons ul li a {
@@ -360,5 +386,4 @@ footer {
     height: 26px;
     margin-top: -6px;
   }
-  }
-
+}
