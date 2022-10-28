@@ -1,63 +1,24 @@
-function divActive() {
-    document.querySelector(".weather").style.display = "flex"
-    document.querySelector("#confirm").style.display = "none"
-}
-
-function functionAlert(msg, myYes) {
-    document.querySelector(".weather").style.display = "none"
-    var confirmBox = $("#confirm")
-    confirmBox.find(".message").text(msg)
-    confirmBox
-        .find(".yes")
-        .unbind()
-        .click(function () {
-            confirmBox.hide()
-        })
-    confirmBox.find(".yes").click(myYes)
-    confirmBox.show()
-}
-
 let temp1save,
   temp2save = 0,
   showTime;
 let weather = {
-    apiKey: "e1b292964b3c86ad361260f80c9496e0",
-    fetchWeather: function (city, lat = null, lon = null) {
-        if (lat && lon) {
-            fetch(
-                "https://api.openweathermap.org/data/2.5/weather?lat="
-                + lat + "&lon="
-                + lon + "&units=metric&appid=" 
-                + this.apiKey
-            )
-            .then((response) => {
-                if (!response.ok) {
-                    functionAlert()
-                }
-                else{
-                    divActive()
-                }
-                return response.json()
-            })
-            .then((data) => this.displayWeather(data))
-        }
-        else if (city) {
-            fetch(
-                "https://api.openweathermap.org/data/2.5/weather?q=" +
-                city +
-                "&units=metric&appid=" +
-                this.apiKey
-            )
-            .then((response) => {
-                if (!response.ok) {
-                    functionAlert()
-                }
-                else{
-                    divActive()
-                }
-                return response.json()
-            })
-            .then((data) => this.displayWeather(data))
+  apiKey: "e1b292964b3c86ad361260f80c9496e0",
+  fetchWeather: function (city, lat = null, lon = null) {
+    if (lat && lon) {
+      this.fetchData(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${this.apiKey}`
+      );
+    } else if (city) {
+      this.fetchData(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`
+      );
+    }
+  },
+  fetchData: function (url) {
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error!");
         }
         return response.json();
       })
@@ -136,12 +97,12 @@ document.querySelector(".search button").addEventListener("click", function () {
 });
 
 document
-    .querySelector(".search-bar")
-    .addEventListener("keyup", function (event) {
-        if (event.key == "Enter") {
-            weather.search()
-        }
-    })
+  .querySelector(".search-bar")
+  .addEventListener("keyup", function (event) {
+    if (event.key == "Enter") {
+      weather.search();
+    }
+  });
 
 // ask for location permission
 // if granted: show user's location weather data
@@ -186,11 +147,15 @@ const disableDarkMode = () => {
 };
 
 darkModeToggle.addEventListener("click", () => {
-    darkMode = localStorage.getItem("darkMode")
-    darkMode != "enabled" ?  enableDarkMode() : disableDarkMode()
-})
-
-
+  darkMode = localStorage.getItem("darkMode");
+  if (darkMode != "enabled") {
+    enableDarkMode();
+    console.log(darkMode);
+  } else {
+    disableDarkMode();
+    console.log(darkMode);
+  }
+});
 function myFunction() {
   var element = document.getElementById("box");
   element.classList.toggle("light-mode");
