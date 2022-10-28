@@ -58,13 +58,10 @@ let weather = {
                 return response.json()
             })
             .then((data) => this.displayWeather(data))
-        }
-        return response.json();
-      })
-      .then((data) => this.displayWeather(data))
-      .catch((err) => {
+            .catch((err) => {
         this.displayAlert(err.message, () => {});
       });
+    }
   },
   displayWeather: function (data) {
     const {
