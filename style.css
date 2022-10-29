@@ -156,9 +156,7 @@ h1.temp-F {
   display: inline-block;
   width: 60px;
   height: 30px;
-  /* margin-bottom: 15px; */
-  margin-right: 25px;
-  margin-bottom: 40px;
+  margin: 0 25px 0 0;
 }
 .switch input {
   opacity: 0;
@@ -267,15 +265,18 @@ h2 {
   margin: 8px;
 }
 h1.temp {
-  margin-top: 5px;
-  margin: 8px;
-  margin-bottom: 40px;
+  margin: 5px 8px 10px;
+ 
 }
 .description,
-.humidity,
-.wind,
+.humidity{
+	margin: 5px;
+}
+.wind{
+	margin: 5px 5px 30px;
+}
 #time {
-  margin: 8px;
+	margin: 5px;
 }
 /* .centir 
 {
