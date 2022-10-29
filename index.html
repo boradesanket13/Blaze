@@ -5,16 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather-To-Go</title>
     <!-- Bootstrap links -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
     <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/weather.svg"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/weather.svg" />
     <link
       rel="icon"
       type="image/svg+xml"
@@ -37,76 +53,115 @@
     <script src="./script.js" defer></script>
   </head>
 
-<body>
-  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <body>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
-  <div class="card">
-    <div class="toggle-btn"><ion-icon name="contrast" class="contrast"></ion-icon></div>
+    <div class="card">
+      <div class="toggle-btn">
+        <ion-icon name="contrast" class="contrast"></ion-icon>
+      </div>
 
-    <div class="search">
-      <input type="text" class="search-bar" placeholder="Search" id="search">
-      <button id="switch"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em"
-          width="1.5em" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
-          </path>
-        </svg></button>
-    </div>
-    <div id="confirm">
-      <div class="message">No place with this name was found , please try with some other name.</div><br>
-      <button class="yes" onclick="reloadPage()">OK</button>
-   </div>
+      <div class="search">
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="Search"
+          id="search"
+        />
+        <button id="switch">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 1024 1024"
+            height="1.5em"
+            width="1.5em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div id="confirm">
+        <div class="message">
+          No place with this name was found , please try with some other name.
+        </div>
+        <br />
+        <button class="yes" onclick="reloadPage()">OK</button>
+      </div>
 
-    <div class="weather loading">
-      <!-- <div class="centir"> -->
-        <h2 class="city">Weather in Nashik</h2>
+      <div class="weather loading">
+        <!-- <div class="centir"> -->
+        <div class="city-container">
+          <h2 class="city">Weather in Nashik</h2>
+          <img class="flag" src="./assets/flags/in.svg" />
+        </div>
         <h1 class="temp">51°C</h1>
         <div class="flex">
           <label class="switch">
-            <input type="checkbox" id="checkbox" onchange="onTempChange()">
+            <input type="checkbox" id="checkbox" onchange="onTempChange()" />
             <div class="slider round">
               <span class="celsius c">℃</span>
               <span class="fahrenheit f">℉</span>
             </div>
           </label>
         </div>
-      <!-- </div> -->
-      <div class="flexnew">
-        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
-        <div class="description">Cloudy</div>
-        <div class="humidity">Humidity: 60%</div>
-        <div class="wind">Wind speed: 6.2 km/h</div>
-        <div>
-          <span id="time"></span>
+        <!-- </div> -->
+        <div class="flexnew">
+          <img
+            src="https://openweathermap.org/img/wn/04n.png"
+            alt=""
+            class="icon"
+          />
+          <div class="description">Cloudy</div>
+          <div class="humidity">Humidity: 60%</div>
+          <div class="wind">Wind speed: 6.2 km/h</div>
+          <div>
+            <span id="time"></span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <footer>
-  <div class="foot">
-    <div class="icons">
-      <ul>
-        <li>
-          <a title="linkedin" target="_blank" href="#"
-            class="ml-3 text-gray-400">
-            <i class="fab fa-linkedin-in icon"></i>
-          </a>
-        </li>
-        <li>
-          <a title="github" target="_blank" href=" https://github.com/Sanket1308/Weather-App" class="ml-3 text-gray-400">
-            <i class="fab fa-github icon"></i>
-          </a>
-        </li>
-        <li>
-          <a title="twitter" target="_blank" href="#" class="ml-3 text-gray-400">
-            <i class="fab fa-twitter icon"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div>
-  </div>
-  </footer>
+    <footer>
+      <div class="foot">
+        <div class="icons">
+          <ul>
+            <li>
+              <a
+                title="linkedin"
+                target="_blank"
+                href="#"
+                class="ml-3 text-gray-400"
+              >
+                <i class="fab fa-linkedin-in icon"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                title="github"
+                target="_blank"
+                href=" https://github.com/Sanket1308/Weather-App"
+                class="ml-3 text-gray-400"
+              >
+                <i class="fab fa-github icon"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                title="twitter"
+                target="_blank"
+                href="#"
+                class="ml-3 text-gray-400"
+              >
+                <i class="fab fa-twitter icon"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div></div>
+    </footer>
   </body>
 </html>
