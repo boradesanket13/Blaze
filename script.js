@@ -1,66 +1,65 @@
 function divActive() {
-    document.querySelector(".weather").style.display = "flex"
-    document.querySelector("#confirm").style.display = "none"
+  document.querySelector(".weather").style.display = "flex";
+  document.querySelector("#confirm").style.display = "none";
 }
 
 function functionAlert(msg, myYes) {
-    document.querySelector(".weather").style.display = "none"
-    var confirmBox = $("#confirm")
-    confirmBox.find(".message").text(msg)
-    confirmBox
-        .find(".yes")
-        .unbind()
-        .click(function () {
-            confirmBox.hide()
-        })
-    confirmBox.find(".yes").click(myYes)
-    confirmBox.show()
+  document.querySelector(".weather").style.display = "none";
+  var confirmBox = $("#confirm");
+  confirmBox.find(".message").text(msg);
+  confirmBox
+    .find(".yes")
+    .unbind()
+    .click(function () {
+      confirmBox.hide();
+    });
+  confirmBox.find(".yes").click(myYes);
+  confirmBox.show();
 }
 
 let temp1save,
   temp2save = 0,
   showTime;
 let weather = {
-    apiKey: "e1b292964b3c86ad361260f80c9496e0",
-    fetchWeather: function (city, lat = null, lon = null) {
-        if (lat && lon) {
-            fetch(
-                "https://api.openweathermap.org/data/2.5/weather?lat="
-                + lat + "&lon="
-                + lon + "&units=metric&appid=" 
-                + this.apiKey
-            )
-            .then((response) => {
-                if (!response.ok) {
-                    functionAlert()
-                }
-                else{
-                    divActive()
-                }
-                return response.json()
-            })
-            .then((data) => this.displayWeather(data))
-        }
-        else if (city) {
-            fetch(
-                "https://api.openweathermap.org/data/2.5/weather?q=" +
-                city +
-                "&units=metric&appid=" +
-                this.apiKey
-            )
-            .then((response) => {
-                if (!response.ok) {
-                    functionAlert()
-                }
-                else{
-                    divActive()
-                }
-                return response.json()
-            })
-            .then((data) => this.displayWeather(data))
-            .catch((err) => {
-        this.displayAlert(err.message, () => {});
-      });
+  apiKey: "e1b292964b3c86ad361260f80c9496e0",
+  fetchWeather: function (city, lat = null, lon = null) {
+    if (lat && lon) {
+      fetch(
+        "https://api.openweathermap.org/data/2.5/weather?lat=" +
+          lat +
+          "&lon=" +
+          lon +
+          "&units=metric&appid=" +
+          this.apiKey
+      )
+        .then((response) => {
+          if (!response.ok) {
+            functionAlert();
+          } else {
+            divActive();
+          }
+          return response.json();
+        })
+        .then((data) => this.displayWeather(data));
+    } else if (city) {
+      fetch(
+        "https://api.openweathermap.org/data/2.5/weather?q=" +
+          city +
+          "&units=metric&appid=" +
+          this.apiKey
+      )
+        .then((response) => {
+          if (!response.ok) {
+            functionAlert();
+          } else {
+            divActive();
+          }
+          return response.json();
+        })
+        .then((data) => this.displayWeather(data))
+        .catch((err) => {
+          this.displayAlert(err.message, () => {});
+        });
     }
   },
   displayWeather: function (data) {
@@ -70,6 +69,7 @@ let weather = {
       main: { temp, humidity },
       wind: { speed },
       weather: [{ icon, description }],
+      sys: { country },
     } = data;
     console.log(data);
     const temp2 = temp * 1.8 + 32;
@@ -107,6 +107,9 @@ let weather = {
     document.querySelector(".wind").innerText = `Wind speed: ${speed} km/h`;
     document.querySelector(".weather").classList.remove("loading");
     document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`;
+    document.querySelector(
+      ".flag"
+    ).src = `./assets/flags/${country.toLowerCase()}.svg`;
   },
   displayAlert: function (msg, myYes) {
     const confirmBox = document.querySelector("#confirm");
@@ -133,12 +136,12 @@ document.querySelector(".search button").addEventListener("click", function () {
 });
 
 document
-    .querySelector(".search-bar")
-    .addEventListener("keyup", function (event) {
-        if (event.key == "Enter") {
-            weather.search()
-        }
-    })
+  .querySelector(".search-bar")
+  .addEventListener("keyup", function (event) {
+    if (event.key == "Enter") {
+      weather.search();
+    }
+  });
 
 // ask for location permission
 // if granted: show user's location weather data
@@ -183,10 +186,9 @@ const disableDarkMode = () => {
 };
 
 darkModeToggle.addEventListener("click", () => {
-    darkMode = localStorage.getItem("darkMode")
-    darkMode != "enabled" ?  enableDarkMode() : disableDarkMode()
-})
-
+  darkMode = localStorage.getItem("darkMode");
+  darkMode != "enabled" ? enableDarkMode() : disableDarkMode();
+});
 
 function myFunction() {
   var element = document.getElementById("box");
