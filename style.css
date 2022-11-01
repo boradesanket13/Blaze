@@ -294,17 +294,16 @@ h2 {
 }
 h1.temp {
   margin: 5px 8px 10px;
- 
 }
 .description,
-.humidity{
-	margin: 5px;
+.humidity {
+  margin: 5px;
 }
-.wind{
-	margin: 5px 5px 30px;
+.wind {
+  margin: 5px 5px 30px;
 }
 #time {
-	margin: 5px;
+  margin: 5px;
 }
 /* .centir 
 {
@@ -388,4 +387,14 @@ footer p {
     height: 26px;
     margin-top: -6px;
   }
+}
+
+.city-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flag {
+  max-width: 28px;
 }
