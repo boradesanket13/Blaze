@@ -15,7 +15,7 @@
   --font-family: "Open Sans", sans-serif;
 }
 body {
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -62,7 +62,6 @@ body {
   margin-left: -70px;
 }
 .card {
-  margin-left: 35%;
   position: relative;
   background: var(--card);
   color: var(--white);
@@ -70,7 +69,6 @@ body {
   border-radius: 30px;
   width: 100%;
   max-width: 420px;
-  margin-top: 3em !important;
 }
 
 .search {
@@ -314,33 +312,29 @@ h1.temp {
 } */
 
 footer {
-  margin-top: 32px;
-  position: relative;
+  position: fixed;
   width: 100%;
   background-color: var(--card);
   color: var(--white);
   bottom: 0;
   text-align: center;
-}
-.foot {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 0.2rem 0;
-  gap: 0.3rem;
 }
-
-.icons ul {
-  display: flex;
-  margin: 0.7rem 0;
-  padding: 0;
-}
-
-.icons ul li {
+.footer-social-list {
   list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
-
-.icons ul li a {
+.footer-social-list__item {
+}
+.footer-social-list__link {
   display: block;
   position: relative;
   width: 35px;
@@ -349,44 +343,24 @@ footer {
   text-align: center;
   line-height: 20px;
   font-size: 20px;
-  margin: 0 0 0 20px;
-  padding-top: 3px;
   border-radius: 50%;
   z-index: 1;
   border: 2px solid var(--white);
+  text-decoration: none;
 }
-
-.icons ul li a .icon {
-  position: relative;
-  color: var(--icon);
-  transition: 0.5s;
-  z-index: 3;
-}
-footer p {
-  margin-top: -15px;
-  margin-left: 4px;
-  align-items: center;
-}
-.icons ul li a:hover {
+.footer-social-list__link:hover {
   background-color: var(--red);
   border: 2px solid var(--red);
 }
-.icons ul li a .icon:hover {
+.footer-social-list__link:hover .icon {
   color: var(--white);
 }
-
-@media (max-width: 800px) {
-  .card {
-    margin-left: 10%;
-  }
-  footer p {
-    margin-top: -13px;
-  }
-  .icons ul li a {
-    width: 28px;
-    height: 26px;
-    margin-top: -6px;
-  }
+.icon {
+  position: relative;
+  color: var(--icon);
+  transition: 0.5s;
+  margin-top: 4px;
+  z-index: 3;
 }
 
 .city-container {
@@ -397,4 +371,14 @@ footer p {
 }
 .flag {
   max-width: 28px;
+}
+
+@media (max-width: 800px) {
+  .icon {
+    margin: 0;
+  }
+  .footer-social-list__link {
+    width: 28px;
+    height: 28px;
+  }
 }
