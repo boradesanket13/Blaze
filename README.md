@@ -1,4 +1,4 @@
-<h1 align="center"><em>⛅️ Weather-To-Go ⛅️</em></h1>
+<h1 align="center"><em>⛅️ Blaze ⛅️</em></h1>
 
 <div align="center">
 
@@ -18,7 +18,13 @@
 <a href="https://github.com/boradesanket13/Blaze//pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/boradesanket13/Blaze?color=brightgreen"></a> 
 </div>
 
-Weather Forecasting website using <a href="https://openweathermap.org/api">🌦 Openweathermap API 🌦</a>
+
+![image](https://user-images.githubusercontent.com/79108273/205431557-f3feb4ca-b7e9-4a54-80bf-16fcbb8bf055.jpg)
+
+
+<div align="center">
+ <a href="https://blaze-silk.vercel.app/">Blaze: Weather App </a>
+</div>
 
 # Features 🌟
 👉 Search and get weather of any particular location. <br> 
@@ -26,16 +32,10 @@ Weather Forecasting website using <a href="https://openweathermap.org/api">🌦 
 👉 See images of city along with the weather. <br>
 👉 Responsive Design. <br>
 
-
-## Check out the project here🤖[https://blaze-silk.vercel.app/](https://blaze-silk.vercel.app/)
-
-
 ## API Documentation 📃 [Open weathermap](https://openweathermap.org/api)
-
 
 ## License 📜
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
 
 ## Contributing ✨
 
@@ -45,12 +45,9 @@ See [CONTRIBUTING.md](https://github.com/boradesanket13/Blaze/blob/main/CONTRIBU
 
 Please adhere to this project's [CODE-OF-CONDUCT.md](https://github.com/boradesanket13/Blaze/blob/main/CODE-OF-CONDUCT.md).
 
-
-
-
 ## Contributors 🤝
 
-  <a name = "contributors"></a>
+<a name = "contributors"></a>
 <table align="center">
 <tr>
 <td>
