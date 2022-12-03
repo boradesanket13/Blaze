@@ -32,7 +32,8 @@
 👉 See images of city along with the weather. <br>
 👉 Responsive Design. <br>
 
-## API Documentation 📃 [Open weathermap](https://openweathermap.org/api)
+## API Documentation 📃 
+[Open weathermap API](https://openweathermap.org/api)
 
 ## License 📜
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
