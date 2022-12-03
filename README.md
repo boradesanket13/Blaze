@@ -1,4 +1,4 @@
-<h1 align="center"><em>⛅️ Blaze ⛅️</em></h1>
+<h1 align="center"><em>⛅️ <a href="https://blaze-silk.vercel.app/">Blaze</a> ⛅️</em></h1>
 
 <div align="center">
 
@@ -23,6 +23,7 @@
 
 
 <div align="center">
+  
  <a href="https://blaze-silk.vercel.app/">Blaze: Weather App </a>
 </div>
 
