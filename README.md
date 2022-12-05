@@ -43,9 +43,9 @@
 
 Contributions are always welcome!
 
-See [CONTRIBUTING.md](https://github.com/boradesanket13/Blaze/blob/main/CONTRIBUTING.md) for ways to get started.
+See [CONTRIBUTING.md](https://github.com/boradesanket13/Blaze/blob/main/contributing.md) for ways to get started.
 
-Please adhere to this project's [CODE-OF-CONDUCT.md](https://github.com/boradesanket13/Blaze/blob/main/CODE-OF-CONDUCT.md).
+Please adhere to this project's [CODE-OF-CONDUCT.md](https://github.com/boradesanket13/Blaze/blob/main/code-of-conduct.md).
 
 ## Contributors 🤝
 
