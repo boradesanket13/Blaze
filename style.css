@@ -70,19 +70,25 @@ body {
   width: 100%;
   max-width: 420px;
 }
+.wea{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .search {
+  margin: 5px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 #switch {
-  margin: 0.5em;
+
   border-radius: 50%;
   border: none;
-  height: 44px;
-  width: 44px;
+  height: 48px;
+  width: 48px;
   outline: none;
   background: var(--grey);
   color: var(--white);
@@ -122,22 +128,36 @@ h1.temp-F {
 }
 
 .flex {
+  margin: 5px;
+  padding-top: 10px;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .description {
   text-transform: capitalize;
-  margin-left: 8px;
+  padding-top: 12px;
 }
+.humidity {
 
+}
+.wind {
+  margin: 5px;
+}
+.time {
+  
+}
+.time1{
+  margin: 5px;
+  
+}
 .weather {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 4px;
-  margin: 6.9px;
+  margin: 5px;
 }
 .flexnew {
   display: flex;
@@ -170,7 +190,7 @@ h1.temp-F {
   display: inline-block;
   width: 60px;
   height: 30px;
-  margin: 0 25px 0 0;
+  margin: ;
 }
 .switch input {
   opacity: 0;
@@ -287,20 +307,17 @@ input.change {
   color: var(--black);
 }
 h2 {
-  margin-top: 5px;
-  margin: 8px;
+  margin: 5px;
 }
 h1.temp {
-  margin: 5px 8px 10px;
+  margin: 5px 5px 5px;
 }
 .description,
 .humidity {
   margin: 5px;
 }
-.wind {
-  margin: 5px 5px 30px;
-}
-#time {
+
+/*#time {
   margin: 5px;
 }
 /* .centir 
@@ -359,17 +376,19 @@ footer {
   position: relative;
   color: var(--icon);
   transition: 0.5s;
-  margin-top: 4px;
+  margin: 5px;
   z-index: 3;
 }
 
 .city-container {
+  margin-top: 5px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .flag {
+  margin: 5px;
   max-width: 28px;
 }
 
