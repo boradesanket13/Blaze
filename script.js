@@ -26,11 +26,11 @@ let weather = {
     if (lat && lon) {
       fetch(
         "https://api.openweathermap.org/data/2.5/weather?lat=" +
-          lat +
-          "&lon=" +
-          lon +
-          "&units=metric&appid=" +
-          this.apiKey
+        lat +
+        "&lon=" +
+        lon +
+        "&units=metric&appid=" +
+        this.apiKey
       )
         .then((response) => {
           if (!response.ok) {
@@ -42,11 +42,28 @@ let weather = {
         })
         .then((data) => this.displayWeather(data));
     } else if (city) {
+
+      //if user searched for a country
+      fetch(
+        "https://restcountries.com/v3.1/name/" + city
+      )
+        .then((response) => {
+          return response.json();
+        })
+        //data[0].latlng[0]
+        .then((data) => {
+          if (data.status !== 404)
+            this.fetchWeather(city, data[0].latlng[0], data[0].latlng[1]);
+        }
+        )
+        .catch((err) => {
+          this.displayAlert(err.message, () => { });
+        });
       fetch(
         "https://api.openweathermap.org/data/2.5/weather?q=" +
-          city +
-          "&units=metric&appid=" +
-          this.apiKey
+        city +
+        "&units=metric&appid=" +
+        this.apiKey
       )
         .then((response) => {
           if (!response.ok) {
@@ -58,7 +75,7 @@ let weather = {
         })
         .then((data) => this.displayWeather(data))
         .catch((err) => {
-          this.displayAlert(err.message, () => {});
+          this.displayAlert(err.message, () => { });
         });
     }
   },
@@ -94,8 +111,8 @@ let weather = {
     showTime = setInterval(() => {
       let time = new Date(
         new Date().getTime() +
-          timezone * 1000 +
-          new Date().getTimezoneOffset() * 60000
+        timezone * 1000 +
+        new Date().getTimezoneOffset() * 60000
       );
       document.querySelector("#time").innerText =
         time.toLocaleTimeString(undefined, timeOptions) +
