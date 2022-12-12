@@ -1,3 +1,4 @@
+const API_KEY = 0;
 function divActive() {
   document.querySelector(".weather").style.display = "flex";
   document.querySelector("#confirm").style.display = "none";
@@ -114,7 +115,7 @@ let weather = {
     ).src = `./assets/flags/${country.toLowerCase()}.svg`;
     document.querySelector(
       "#gmap_canvas"
-    ).src = `https://www.google.com/maps/embed/v1/place?key= &q=${name}`;
+    ).src = `https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${name}`;
   },
   displayAlert: function (msg, myYes) {
     const confirmBox = document.querySelector("#confirm");
@@ -156,7 +157,7 @@ navigator.geolocation.getCurrentPosition(
   (position) => {
     const { latitude, longitude } = position.coords;
     document.getElementById("gmap_canvas").src =
-      "https://www.google.com/maps/embed/v1/place?key= &q=" +
+      "https://www.google.com/maps/embed/v1/place?key="+API_KEY+ "&q=" +
       latitude +
       "," +
       longitude;
