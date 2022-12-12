@@ -29,6 +29,7 @@ body {
   transition: all 1.2s;
   overflow-y: hidden;
 }
+
 #confirm {
   display: none;
   box-sizing: border-box;
