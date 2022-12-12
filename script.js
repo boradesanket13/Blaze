@@ -56,7 +56,9 @@ let weather = {
           }
           return response.json();
         })
-        .then((data) => this.displayWeather(data))
+        .then((data) => {
+          this.displayWeather(data);
+        })
         .catch((err) => {
           this.displayAlert(err.message, () => {});
         });
@@ -110,6 +112,9 @@ let weather = {
     document.querySelector(
       ".flag"
     ).src = `./assets/flags/${country.toLowerCase()}.svg`;
+    document.querySelector(
+      "#gmap_canvas"
+    ).src = `https://www.google.com/maps/embed/v1/place?key= &q=${name}`;
   },
   displayAlert: function (msg, myYes) {
     const confirmBox = document.querySelector("#confirm");
@@ -133,6 +138,7 @@ let weather = {
 
 document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
+  myFunction1();
 });
 
 document
@@ -149,6 +155,11 @@ document
 navigator.geolocation.getCurrentPosition(
   (position) => {
     const { latitude, longitude } = position.coords;
+    document.getElementById("gmap_canvas").src =
+      "https://www.google.com/maps/embed/v1/place?key= &q=" +
+      latitude +
+      "," +
+      longitude;
     weather.fetchWeather(null, latitude, longitude);
   },
   () => weather.fetchWeather("Nashik")

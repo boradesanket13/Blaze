@@ -29,6 +29,10 @@ body {
   transition: all 1.2s;
   overflow-y: hidden;
 }
+.container{
+  display: flex;
+  justify-content: space-around;
+}
 #confirm {
   display: none;
   box-sizing: border-box;
