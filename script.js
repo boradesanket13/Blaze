@@ -17,6 +17,10 @@ function functionAlert(msg, myYes) {
   confirmBox.show();
 }
 
+// import dotenv from 'dotenv';
+// dotenv.config();
+// console.log(process.env);
+
 let temp1save,
   temp2save = 0,
   showTime;
@@ -106,7 +110,18 @@ let weather = {
     document.querySelector(".humidity").innerText = `Humidity: ${humidity}%`;
     document.querySelector(".wind").innerText = `Wind speed: ${speed} km/h`;
     document.querySelector(".weather").classList.remove("loading");
-    document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`;
+
+    fetch(`https://source.unsplash.com/1600x900/?${name}`)
+    .then(response => {
+      const url = response.url;
+      if(!url.includes("source-404")){
+        document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`;
+      }
+      else{
+        document.body.style.backgroundImage = `url('https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg')`;
+      }
+    });
+    // console.log(process.env.APIKEY);
     document.querySelector(
       ".flag"
     ).src = `./assets/flags/${country.toLowerCase()}.svg`;
