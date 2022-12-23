@@ -44,6 +44,7 @@ let weather = {
     } else if (city) {
 
       //if user searched for a country
+      // fetching data from restcountries API
       fetch(
         "https://restcountries.com/v3.1/name/" + city
       )
