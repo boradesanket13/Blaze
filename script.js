@@ -117,6 +117,7 @@ let weather = {
       if(!url.includes("source-404")){
         document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`;
       }
+      // Shows Default image if image on available on unsplash
       else{
         document.body.style.backgroundImage = `url('https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg')`;
       }
