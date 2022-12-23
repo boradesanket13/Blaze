@@ -37,7 +37,7 @@ Adding the JavaScript!
 - Adding API key to .js file.
 - Fetching the data from the URL : Fetch method calls the raw data from the API in the form of JSON. Next we convert the JSON data to
   object so that we can access the data by using package-lock.json().
-- convert the data in object to acess the thing we wanted.
+- convert the data in object to access the thing we wanted.
 
 
 
