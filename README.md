@@ -35,6 +35,7 @@
 
 ## API Documentation 📃 
 [Open weathermap API](https://openweathermap.org/api)
+Rest Countries API](https://restcountries.com/)
 
 ## License 📜
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
