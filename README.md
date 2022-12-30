@@ -73,4 +73,4 @@ Please adhere to this project's [CODE-OF-CONDUCT.md](https://github.com/boradesa
 
 
 ## Feedback 🙋‍
-If you have any feedback, please reach out to me at <a src="mailto:chandwadkar28@gmail.com">boradesanket13@gmail.com</a>
+If you have any feedback, please reach out to me at <a src="mailto:boradesanket13@gmail.com">boradesanket13@gmail.com</a>
